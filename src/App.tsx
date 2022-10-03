@@ -9,7 +9,6 @@ const AppStyled = styled.div`
 `
 
 export const App = () => {
-  const num = "name"
   return (
     <AppStyled>
       <img src={image} alt="test" />
