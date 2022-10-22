@@ -1,5 +1,10 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+// const nodeExternals = require('webpack-node-externals');
+// import path from 'path'
+// import HtmlWebpackPlugin from 'html-webpack-plugin'
+// import nodeExternals from 'webpack-node-externals'
+
 
 module.exports = {
   entry: './src/index.tsx',
@@ -28,15 +33,13 @@ module.exports = {
       {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
         type: 'asset/inline',
-      }
+      },
     ],
   },
   output: {
     path: path.resolve(__dirname, '..', './build'),
     filename: 'bundle.js',
   },
-  plugins: [
-    new HtmlWebpackPlugin({template: './src/index.html'}),
-  ],
+  plugins: [new HtmlWebpackPlugin({ template: './src/index.html' })],
   stats: 'errors-only',
 }
